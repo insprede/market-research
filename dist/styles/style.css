@@ -1,3 +1,140 @@
+/* ----------------------------------------------------------- */
+/* Colors */
+/* ----------------------------------------------------------- */
+
+:root {
+  --theme: #cee3f7;
+  --background: #f5f7f9;
+  --border: #d9dbdd;
+  --font-color: #2c3e50;
+  --font-color-light: #91a0b2;
+  --alert-bg: #fff7f7;
+  --alert-color: #d98484;
+}
+
+/* ----------------------------------------------------------- */
+/* General Setup */
+/* ----------------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
 body {
-  /*color: red;*/
+  background-color: var(--background);
+  color: var(--font-color);
+  font-family: 'Lato', 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+.content {
+  padding: 30px;
+}
+
+.light-text {
+  color: var(--font-color-light);
+}
+
+.website-processing {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding-top: calc(50vh - 25px);
+  text-align: center;
+}
+
+.website-processing .fa-spinner {
+  font-size: 250%;
+  color: var(--theme);
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button.disabled:hover {
+  cursor: not-allowed;
+}
+
+/* ----------------------------------------------------------- */
+/* Quote Card */
+/* ----------------------------------------------------------- */
+
+.quote-card {
+  background-color: #ffffff;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  box-shadow: 0px 2px 9px -1px rgba(145,140,145,0.3);
+  border-radius: 3px;
+}
+
+.quote-card .author {
+  text-align: right;
+}
+
+.quote-card a {
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+/*.quote-card .info {
+  font-size: 80%;
+}*/
+
+.share {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ----------------------------------------------------------- */
+/* Typeform */
+/* ----------------------------------------------------------- */
+
+
+.typeform-share {
+  display:inline-block;
+  text-decoration:none;
+  background-color:#267DDD;
+  color:white;
+  cursor:pointer;
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:20px;
+  line-height:50px;
+  text-align:center;
+  margin:0;
+  height:50px;
+  padding:0px 33px;
+  border-radius:25px;
+  max-width:100%;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  font-weight:bold;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
