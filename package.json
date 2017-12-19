@@ -4,7 +4,9 @@
   "description": "The Minimal React Webpack Babel Setup for personal use.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --colors --hot --config ./webpack.config.js",
+    "start": "node server.js",
+    "postinstall": "webpack -p",
+    "dev": "webpack-dev-server --progress --colors --hot --config ./webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -17,10 +19,6 @@
       "stage-2"
     ]
   },
-  "bugs": {
-    "url": "https://github.com/TimZeng/minimal-react-boilerplate/issues"
-  },
-  "homepage": "https://github.com/TimZeng/minimal-react-boilerplate#readme",
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
@@ -32,6 +30,7 @@
     "webpack-dev-server": "^2.4.1"
   },
   "dependencies": {
+    "express": "^4.16.2",
     "firebase": "^4.8.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
