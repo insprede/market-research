@@ -3,7 +3,8 @@ import firebase from 'firebase';
 
 class Share extends Component {
   recordClick = () => {
-    const { name, link, updateState } = this.props;
+    const { name, updateState } = this.props;
+    const link = 'https://tim796.typeform.com/to/driloZ';
 
     updateState(true);
     const endPoint = name.replace(/[^a-zA-Z0-9]/g,' ');
@@ -27,7 +28,7 @@ class Share extends Component {
   }
 
   render() {
-    const { link } = this.props;
+    const { link, name } = this.props;
     return (
       <div className='share'>
 
@@ -43,9 +44,7 @@ class Share extends Component {
 
         <div>
           <span className='link' onClick={this.recordClick} >
-            <i className="fa fa-amazon" />
-            &nbsp;
-            Book >>
+            Inspired ? Tell more
           </span>
         </div>
 

@@ -40,17 +40,31 @@ export default class App extends Component {
   render() {
     return (
       <div className='container'>
-        <h1>Inspiread</h1><br/>
+        <h1>Insprede</h1><br/>
         { this.renderLoading() }
-        {
-          data.map(quote =>
-            <div key={quote.name} id={quote.name} className='quote-card'>
-              <p>"{quote.text}"</p>
-              <p className='author light-text'>--{quote.author}</p>
-              <Share link={quote.link} name={quote.name} updateState={this.updateState} />
-            </div>
-          )
-        }
+
+        {/*<div className='card-board'>*/}
+          {
+            data.map(quote =>
+              <div key={quote.name} id={quote.name} className='quote-card'>
+
+                <div style={{display:'inline-block', width: '30%', height:'250px'}}>
+                  <center><img style={{height:'250px'}} src={quote.image} /></center>
+                </div>
+
+                <div style={{display:'inline-block', width: '70%', height: '250px', verticalAlign:'top'}}>
+                  <div style={{height: '250px', verticalAlign:'middle'}}>
+                    <p style={{fontSize:'120%'}}>"{quote.text}"</p>
+                    <p className='author light-text' style={{fontSize:'80%'}}>-- {quote.author}</p>
+                    <p className='author light-text' style={{fontSize:'80%'}}>{quote.name}</p>
+                  </div>
+                </div>
+
+                <Share link={quote.link} name={quote.name} updateState={this.updateState} />
+              </div>
+            )
+          }
+        {/*</div>*/}
 
         <center>
           <a
