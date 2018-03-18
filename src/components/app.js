@@ -3,26 +3,47 @@ import firebase from 'firebase';
 
 import Share from './share';
 import Loading from './loading';
-import data from './data';
+// import data from './data';
 
 export default class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      processing: false
+      processing: false,
+      data: []
     }
   }
 
   componentWillMount() {
     firebase.initializeApp({
-      apiKey: 'AIzaSyCG4dS3poDsjB2DlsCq6vTZBG9eiaFe9KQ',
-      authDomain: 'inspiread-4eec7.firebaseapp.com',
-      databaseURL: 'https://inspiread-4eec7.firebaseio.com',
-      projectId: 'inspiread-4eec7',
-      storageBucket: 'inspiread-4eec7.appspot.com',
-      messagingSenderId: '762894700612'
+      apiKey: 'AIzaSyC4rf0FBOlZSLVuM7iiDpXOY9OxnmNdy6k',
+      authDomain: 'market-research-c8482.firebaseapp.com',
+      databaseURL: 'https://market-research-c8482.firebaseio.com/',
+      projectId: 'market-research-c8482',
+      storageBucket: 'market-research-c8482.appspot.com',
+      messagingSenderId: '145569036798'
     });
+  }
+
+  componentDidMount() {
+    const context = this;
+    firebase.database().ref('quotes').once('value', function(snapshot) {
+      console.log(snapshot.val());
+      context.setState({ data: snapshot.val() });
+    });
+  }
+
+  componentDidUpdate() {
+    // (function(d, s, id) {
+    //   var js, fjs = d.getElementsByTagName(s)[0];
+    //   if (d.getElementById(id)) return;
+    //   js = d.createElement(s); js.id = id;
+    //   js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
+    //   fjs.parentNode.insertBefore(js, fjs);
+    // }(document, 'script', 'facebook-jssdk'));
+    document.get
+    console.log('component updated!!!!');
   }
 
   renderLoading() {
@@ -38,6 +59,9 @@ export default class App extends Component {
   updateState = (processing) => this.setState({ processing });
 
   render() {
+    const { data } = this.state;
+    console.log(data);
+    console.log(this.state.data);
     return (
       <div className='container'>
         <h1>Insprede</h1><br/>
